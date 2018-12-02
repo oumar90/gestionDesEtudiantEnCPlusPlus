@@ -1,0 +1,20 @@
+# depslib dependency file v1.0
+1543750268 source:/home/oudjira/Devs/POOCPP/TP2/main.cpp
+	<iostream>
+	<vector>
+	<fstream>
+	<sstream>
+	<string>
+	<cstring>
+	"fonctions.h"
+
+1543750504 source:/home/oudjira/Devs/POOCPP/TP2/fonctions.cpp
+	<iostream>
+	<sstream>
+	<fstream>
+	"fonctions.h"
+
+1543750520 /home/oudjira/Devs/POOCPP/TP2/fonctions.h
+	<string>
+	<vector>
+
