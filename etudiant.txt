@@ -1,7 +1,12 @@
 ======================================LISTES DES ETUDIANTS========================================
 NOMS   ET   PRÉNOMS   -   SEXES    -    AGES    -    MATRICULES     -     DATE DE NAISSANCE   -    LIEU DE NAISSANCE   -   OPTIONS
 
-oumar       djimé       masculin       5       12VGF3       11/11/119       kaola       GIN
 
-kmkmkmk       dfgfdgf       feminin       564       15ddfdf6       12/12/209       kakdakdk       GIE
+oumar   djimé Ratou   |    masculin   |    26   |    17Y402P   |    19/11/1993   |    N'Djamena   |    MIP
+
+Mboto   Socrate Ali   |    masculin   |    26   |    17Y201M   |    11/30/1991   |    Douala   |    GIN
+
+Cresson    Arcele Arcele  |     masculin  |     24  |     17Y620F  |     16/17/1994  |     Yaoundé  |     GBIO
+
+Mbounou   Kenfak cedric   |    masculin   |    28   |    17Y239P   |    11/18/1990   |    DOUALA   |    MIP
 
