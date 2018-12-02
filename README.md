@@ -42,3 +42,4 @@ ou compiler en ligne de commande:
                  6) Mr Arcele étant perdu dans le fichier, permetez-lui de
         
 
+             III- Bien d'autres fonctions
