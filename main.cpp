@@ -35,21 +35,24 @@ int main()
 
                 int N(0), val(0), nombresDesOccurences(0),elts(0);
                 int tab[N];
+                cout << "\n*****************************************************************************************"<<endl;
+                cout << "**                 BIENVENUE AU PROGRAMME QUI CALCUL LE NOMBRE D'OCCURRENCE            **"<<endl;
+                cout << "*****************************************************************************************"<<endl;
 
-                cout << "************Veillez entrer la taille (N) du tableau ***************** "<<endl;
+                cout << "\n************Veillez entrer la taille (N) du tableau ***************** "<<endl;
                 cout << "\n\tmyconsole@taille~$ ";
                 cin>> N;
                 //On remplie le tableau tab
                 cout << "\n************Veillez entrer les éléments de tableau*******************"<<endl;
                 for(int i=0; i<N; i++){
-                    cout << "myconsole@elts~$ ";
+                    cout << "\n\tmyconsole@elts~$ ";
                     cin>>elts;
                     tab[i]=elts;
                 }
 
                 //on entre la valeuer a compter son nombre des occurences
                 cout << "\n***************Veillez entrer la valeur de val******************* "<<endl;
-                cout << "myconsole@val~$ ";
+                cout << "\n\tmyconsole@val~$ ";
                 cin>> val;
 
 
@@ -63,9 +66,11 @@ int main()
 
                 int N(0),elts(0);
                  int tab[N];
-
-                cout << "************Veillez entrer la taille (N) du tableau ***************** "<<endl;
-                cout << "myconsole@taille~$ ";
+                cout << "\n*****************************************************************************************"<<endl;
+                cout << "**                 BIENVENUE AU PROGRAMME QUI DETERMINE LES NOMBRES IMPAIRS            **"<<endl;
+                cout << "*****************************************************************************************"<<endl;
+                cout << "\n************Veillez entrer la taille (N) du tableau ***************** "<<endl;
+                cout << "\n\tmyconsole@taille~$ ";
                 cin>> N;
                 //On remplie le tableau tab
                 cout << "\n************Veillez entrer les éléments de tableau*******************"<<endl;
@@ -82,14 +87,16 @@ int main()
                 //Declarations et initialisations des variables
                 int elts(0), n(0);
                 int sommePrecedent[n];
-
-                cout << "************Veillez entrer la taille (N) du tableau ***************** "<<endl;
-                cout << "myconsole@taille~$ ";
+                cout << "\n*****************************************************************************************"<<endl;
+                cout << "**                 BIENVENUE AU PROGRAMME QUI SOMME LES EELEMENTS PRECEDENT            **"<<endl;
+                cout << "*****************************************************************************************"<<endl;
+                cout << "\n************Veillez entrer la taille (N) du tableau ***************** "<<endl;
+                cout << "\n\tmyconsole@taille~$ ";
                 cin>>n;
                 cout <<"\n";
                 cout << "\n************Veillez entrer les éléments du tableau ***************** "<<endl;
                 for(int i = 0; i < n ; i++){
-                    cout << "myconsole@elts~$ ";
+                    cout << "\n\tmyconsole@elts~$ ";
                     cin>> elts;
                     sommePrecedent[i] = elts;
                 }
@@ -99,9 +106,9 @@ int main()
                 {
                     cout << " " << sommePrecedent[i];
                 }
-                cout << " ]"<<endl;
+                cout << "]"<<endl;
 
-                cout << "\n\tLa somme des éléments précédents : [ ";
+                cout << "\n\tLa somme des éléments précédents : [";
                 sommeDesElementPrecedent(sommePrecedent, n);
                 cout <<"]" <<endl;
             break;
@@ -111,9 +118,11 @@ int main()
                 string chainLecture("sans"), chaineAphabetique("sans");
 
                 int codeAscii(0);
-
-                cout<<"Entrer une chaine de caracteres se terminant par un point."<<endl<<endl;
-
+                cout << "\n*****************************************************************************************"<<endl;
+                cout << "**                 BIENVENUE AU PROGRAMME QUI DETERMINE LES FREQUENCES DE LETTRES      **"<<endl;
+                cout << "*****************************************************************************************"<<endl;
+                cout<<"\n===========Entrer une chaine de caracteres se terminant par un point=============="<<endl<<endl;
+                cout << "\n\t:> ";
                 getline(cin, chainLecture, '.');
 
                 for(int i = 0; i < chainLecture.size(); i++){
@@ -144,7 +153,7 @@ int main()
 
                     cout.precision(2);
 
-                    cout<<collectionDeChaineDeCaractere[i]<<": "<<calculFreqceCaractere(collectionDeChaineDeCaractere[i], chaineAphabetique)<<endl;
+                    cout<<collectionDeChaineDeCaractere[i]<<"  :  "<<calculFreqceCaractere(collectionDeChaineDeCaractere[i], chaineAphabetique) << "%"<<endl;
 
                 }
 
@@ -156,7 +165,7 @@ int main()
             case 5 : {
                     //Sous menu
                     menuPrincipaleEtudiant();
-                    cout << "*****************************************************************************************"<<endl;
+                    cout << "\n*****************************************************************************************"<<endl;
                     cout << "**                 VEILLEZ FAIRE VOTRE CHOIX [a-c]                                     **"<<endl;
                     cout << "*****************************************************************************************"<<endl;
                     cout <<"\n\tmyconsole@choix~$ ";
@@ -170,15 +179,15 @@ int main()
                              ajouterEtudiantDansLaListe();
                              cout << "\n\t Voulez-vous verifier l'enregistrement (Oui/Non) ? ";
                              cin>> verfifier;
-                             if(verfifier == "Oui" || verfifier == "O" || verfifier == "o")
-                                lireLaListeEtudiant();
+                             if(verfifier == "Oui" || verfifier == "O" || verfifier == "o" ||verfifier =="OUI" )
+                                lireLaListeEtudiant(); //oN APPEL LA FONTION POUR LISTER LES ETUDIANTS
 
                         break;}
                         case 'b':{
-                            lireLaListeEtudiant();
+                            lireLaListeEtudiant();//oN APPEL LA FONTION POUR LISTER LES ETUDIANTS
                         break;}
                         case 'c':{
-                             listerDesEtudiantsFeminin();
+                             listerDesEtudiantsFeminin();//oN APPEL LA FONTION POUR LISTER LES ETUDIANTS  DU GENRE GEMININ
                         break;}
                         case 'd':lireMotParMot(); break;
                         case 'e':lireCaractereParCaractere(); break;
@@ -199,34 +208,19 @@ int main()
                                 case 3: {filiaire = "GIN";listerDesEtudiantsDansUneFiliaireDonne(filiaire);break;}
                                 case 4: {filiaire = "GIE";listerDesEtudiantsDansUneFiliaireDonne(filiaire);break;}
                             }
-
-
-
                         break;}
                         case 'g': positionDuCurseur(); break;
-                        case 'h':
-                        cout << "\n\tLe fichier etudiant.txt pèse est "<< tailleDuFichier() << " octets" <<endl;
-
-                          break;
-                        default:
-                            cout << "Votre choix est invalide !!" << endl;break;
+                        case 'h':cout << "\n\tLe fichier etudiant.txt pèse est "<< tailleDuFichier() << " octets" <<endl;break;
+                        default:cout << "Votre choix est invalide !!" << endl;break;
 
                     }
 
-
                 break;
             }
-
-
-
-
     }
-
-
-
         cout << "\n\t Voulez-vous continuez (Oui/Non) ? ";
         cin>> select;
-    }while( select == "Oui" || select == "O" || select== "o");
+    }while( select == "Oui" || select == "O" || select== "o" || select == "OUI");
 
 return 0;
 }

@@ -125,17 +125,6 @@ int frequenceDeLettre(string chaine, char c)
 
     return compteur;
 }
-
-//=====================================Taille d'un fichier======================
-/*istream::pos_type taille_fichier(const string &nom) {
-   ifstream fich{ nom };
-   fich.seekg(0, ios::end); // aller à zéro bytes de la fin
-   return fich.tellg();  // obtenir la position et la retourner
-}*/
-
-
-
-
 //====================================Fichier==================================
 //Fonction qui permet de lire la liste des étudian
 
@@ -143,7 +132,7 @@ void lireLaListeEtudiant()
 {
     string ligne;
 
-    cout << "Listes des étudiants déja inscrits" <<endl;
+    cout << "\n\t======================Listes des étudiants déja inscrits=========================" <<endl;
     ifstream fichier("etudiant.txt");
     if (fichier)
     {
@@ -175,10 +164,10 @@ void ajouterEtudiant(vector<etudiant> listeEtudiant  , int nbEtudiant)
             if( listeEtudiant[i].sexe ==  0){
                 switch(listeEtudiant[i].option)
                 {
-                    case GBIO: monFlux <<listeEtudiant[i].nom << "    "<< listeEtudiant[i].prenom << "       " << "masculin" << "       " << listeEtudiant[i].age << "       " <<listeEtudiant[i].matricule << "       " << listeEtudiant[i].dateDeNaissance << "       " <<listeEtudiant[i].lieuDeNaissance << "       " << "GBIO" << endl; break;
-                    case MIP: monFlux <<listeEtudiant[i].nom << "   "<< listeEtudiant[i].prenom << "       " << "masculin" << "       " << listeEtudiant[i].age << "       " <<listeEtudiant[i].matricule << "       " << listeEtudiant[i].dateDeNaissance << "       " <<listeEtudiant[i].lieuDeNaissance << "       " << "MIP" << endl ;break;
-                    case GIE: monFlux <<listeEtudiant[i].nom << "   "<< listeEtudiant[i].prenom << "       " << "masculin" << "       " << listeEtudiant[i].age << "       " <<listeEtudiant[i].matricule << "       " << listeEtudiant[i].dateDeNaissance << "       " <<listeEtudiant[i].lieuDeNaissance << "       " << "GIE" << endl ;break;
-                    case GIN: monFlux <<listeEtudiant[i].nom << "   "<< listeEtudiant[i].prenom << "       " << "masculin" << "       " << listeEtudiant[i].age << "       " <<listeEtudiant[i].matricule << "       " << listeEtudiant[i].dateDeNaissance << "       " <<listeEtudiant[i].lieuDeNaissance << "       " << "GIN" << endl ;break;
+                    case GBIO: monFlux <<listeEtudiant[i].nom << "    "<< listeEtudiant[i].prenom << "  |     " << "masculin" << "  |     " << listeEtudiant[i].age << "  |     " <<listeEtudiant[i].matricule << "  |     " << listeEtudiant[i].dateDeNaissance << "  |     " <<listeEtudiant[i].lieuDeNaissance << "  |     " << "GBIO" << endl; break;
+                    case MIP: monFlux <<listeEtudiant[i].nom << "   "<< listeEtudiant[i].prenom << "   |    " << "masculin" << "   |    " << listeEtudiant[i].age << "   |    " <<listeEtudiant[i].matricule << "   |    " << listeEtudiant[i].dateDeNaissance << "   |    " <<listeEtudiant[i].lieuDeNaissance << "   |    " << "MIP" << endl ;break;
+                    case GIE: monFlux <<listeEtudiant[i].nom << "   "<< listeEtudiant[i].prenom << "   |    " << "masculin" << "   |    " << listeEtudiant[i].age << "   |    " <<listeEtudiant[i].matricule << "   |    " << listeEtudiant[i].dateDeNaissance << "   |    " <<listeEtudiant[i].lieuDeNaissance << "   |    " << "GIE" << endl ;break;
+                    case GIN: monFlux <<listeEtudiant[i].nom << "   "<< listeEtudiant[i].prenom << "   |    " << "masculin" << "   |    " << listeEtudiant[i].age << "   |    " <<listeEtudiant[i].matricule << "   |    " << listeEtudiant[i].dateDeNaissance << "   |    " <<listeEtudiant[i].lieuDeNaissance << "   |    " << "GIN" << endl ;break;
 
                 }
                 monFlux << "\n";
@@ -186,10 +175,10 @@ void ajouterEtudiant(vector<etudiant> listeEtudiant  , int nbEtudiant)
             }else if(listeEtudiant[i].sexe ==  1){
                 switch(listeEtudiant[i].option)
                 {
-                    case GBIO: monFlux <<listeEtudiant[i].nom << "   "<< listeEtudiant[i].prenom << "       " << "feminin" << "       " << listeEtudiant[i].age << "       " <<listeEtudiant[i].matricule << "       " << listeEtudiant[i].dateDeNaissance << "       " <<listeEtudiant[i].lieuDeNaissance << "       " << "GBIO" << endl ;break;
-                    case MIP: monFlux <<listeEtudiant[i].nom << "   "<< listeEtudiant[i].prenom << "       " << "feminin" << "       " << listeEtudiant[i].age << "       " <<listeEtudiant[i].matricule << "       " << listeEtudiant[i].dateDeNaissance << "       " <<listeEtudiant[i].lieuDeNaissance << "       " << "MIP" << endl ;break;
-                    case GIE: monFlux <<listeEtudiant[i].nom << "   "<< listeEtudiant[i].prenom << "       " << "feminin" << "       " << listeEtudiant[i].age << "       " <<listeEtudiant[i].matricule << "       " << listeEtudiant[i].dateDeNaissance << "       " <<listeEtudiant[i].lieuDeNaissance << "       " << "GIE" << endl ;break;
-                    case GIN: monFlux <<listeEtudiant[i].nom << "   "<< listeEtudiant[i].prenom << "       " << "feminin" << "       " << listeEtudiant[i].age << "       " <<listeEtudiant[i].matricule << "       " << listeEtudiant[i].dateDeNaissance << "       " <<listeEtudiant[i].lieuDeNaissance << "       " << "GIN" << endl ;break;
+                    case GBIO: monFlux <<listeEtudiant[i].nom << "   "<< listeEtudiant[i].prenom << "   |    " << "feminin" << "   |    " << listeEtudiant[i].age << "   |    " <<listeEtudiant[i].matricule << "   |    " << listeEtudiant[i].dateDeNaissance << "   |    " <<listeEtudiant[i].lieuDeNaissance << "   |    " << "GBIO" << endl ;break;
+                    case MIP: monFlux <<listeEtudiant[i].nom << "   "<< listeEtudiant[i].prenom << "   |    " << "feminin" << "   |    " << listeEtudiant[i].age << "   |    " <<listeEtudiant[i].matricule << "   |    " << listeEtudiant[i].dateDeNaissance << "   |    " <<listeEtudiant[i].lieuDeNaissance << "   |    " << "MIP" << endl ;break;
+                    case GIE: monFlux <<listeEtudiant[i].nom << "   "<< listeEtudiant[i].prenom << "   |    " << "feminin" << "   |    " << listeEtudiant[i].age << "   |    " <<listeEtudiant[i].matricule << "   |    " << listeEtudiant[i].dateDeNaissance << "   |    " <<listeEtudiant[i].lieuDeNaissance << "   |    " << "GIE" << endl ;break;
+                    case GIN: monFlux <<listeEtudiant[i].nom << "   "<< listeEtudiant[i].prenom << "   |    " << "feminin" << "   |    " << listeEtudiant[i].age << "   |    " <<listeEtudiant[i].matricule << "   |    " << listeEtudiant[i].dateDeNaissance << "   |    " <<listeEtudiant[i].lieuDeNaissance << "   |    " << "GIN" << endl ;break;
                 }
                 monFlux << "\n";
             }else{
@@ -253,9 +242,10 @@ void ajouterEtudiantDansLaListe()
                 cin.ignore();
                 cout << "\n\t Matricule: ";
                 getline(cin,infosEtudiant.matricule);
-                cout << "\n\t Date de naissance: ";
+                cout << "\n\tOn suppose que la date entrez est valide "<<endl;
+                cout << "\n\t Date de naissance (jj/mm/aaa) : ";
                 getline(cin,infosEtudiant.dateDeNaissance);
-                cout << "\n\t Lieu de naissance: ";
+                cout << "\n\t Lieu de naissance : ";
                 getline(cin,infosEtudiant.lieuDeNaissance);
 
                 string optionv;
@@ -276,12 +266,13 @@ void ajouterEtudiantDansLaListe()
                      infosEtudiant.option = GIN;
                 }
                  else{
-                    cout <<"\n Veilez choissir une mauvaise option SVP!!!";
+                    cout <<"\n Vous avez choisi une mauvaise option !!!";
                 }
 
                 listeEtudiant.push_back(infosEtudiant);
 
                 i = i + 1;
+                cin.ignore();
             }
 
             //Ajout des étudiants
@@ -413,7 +404,7 @@ void listerDesEtudiantsDansUneFiliaireDonne(string filiaire)
         }
 
         if(nombreEtudiantD != 0)
-            cout << "\n\t Les nombre des étudiants dans la filiaire " << filiaire << " est :" << nombreEtudiantD << endl;
+            cout << "\n\t Les nombre des étudiants dans la filiaire " << filiaire << " est : " << nombreEtudiantD << endl;
         else
             cout << "\n\t Aucun étudiant dans la " << filiaire <<  endl;
 
@@ -434,7 +425,7 @@ void menuPrincipale()
     cout << "\n*************************************************************************************************************"<<endl;
     cout << "**                                                                                                         **"<<endl;
     cout << "**                                         MENU                                                            **"<<endl;
-    cout << "**                                                                                                         **"<<endl;
+    cout << "************************************************************************************************************"<<endl;
     cout << "** 1) Fonction permet d'otenir le nombre des occureneces d'un nombre dans un tableau de n élémnets         **"<<endl;
     cout << "**                                                                                                         **"<<endl;
     cout << "** 2) Fonction permet d'imprimer les nombres impaires                                                      **"<<endl;
@@ -442,7 +433,7 @@ void menuPrincipale()
     cout << "** 3) Fonction qui permet de sommer les éléments précédents et lui-même                                    **"<<endl;
     cout << "**                                                                                                         **"<<endl;
     cout << "** 4) Fonction qui determine la frequence de caractere                                                     **"<<endl;
-    cout << "**                                                                                                         **"<<endl;
+    cout << "**************************************************************************************************************"<<endl;
     cout << "** 5) Gestion des étudiants                                                                                **"<<endl;
     cout << "**                                                                                                         **"<<endl;
     cout << "*************************************************************************************************************"<<endl;
@@ -462,7 +453,7 @@ void menuPrincipaleEtudiant()
     cout << "**                                                 **"<<endl;
     cout << "** b) Listes des tous les étudiants                **"<<endl;
     cout << "**                                                 **"<<endl;
-    cout << "** c) Lestes des étudiants du genre feminins       **"<<endl;
+    cout << "** c) Le nombres des étudiants du genre feminins   **"<<endl;
     cout << "**                                                 **"<<endl;
     cout << "** d) Lister le fichier mot par mot                **"<<endl;
     cout << "**                                                 **"<<endl;
