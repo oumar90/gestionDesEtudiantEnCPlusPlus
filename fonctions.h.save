@@ -45,17 +45,23 @@ void menuPrincipale();
 void menuPrincipaleEtudiant();
 
 //Fonction permet d'otenir le nombre des occureneces d'un nombre dans un tableau de n élémnets
-int get_occurence(int *t,int N,int valeur);
+int get_occurence(int t[],int N,int valeur);
 
 //Fonction permet d'imprimer les nombres impaires
-void get_nombresImpaires(int *tab, int N);
+void get_nombresImpaires(int tab[], int N);
 // fonction qui permet de sommer les éléments précédents et lui-même
-int sommeDesElementPrecedent(int *sommePrecedent, int n);
+int sommeDesElementPrecedent(int sommePrecedent[], int n);
 //Fonction qui determine la frequence de caractere
 int frequenceDeLettre(std::string chaine, char c);
 //fonctions qui determine la taille du fichier
 //ofstream::pos_type taille_fichier(const std::string &nom);
 
+//Fonction qui permet de convertir un caractere minuscule en majuscule
+void convertChar(char& c);
+
+
+//Fonction qui permet de convertir une chaine de caractere
+void convert(std::string& s);
 //====================================Fichier==================================
 //Fonction qui permet de lire la liste des étudian
 void lireLaListeEtudiant();
@@ -63,9 +69,20 @@ void lireLaListeEtudiant();
 //Fonction qui permet d'ajouter les étudiants
 void ajouterEtudiant(std::vector<etudiant> listeEtudiant  , int nbEtudiant);
 //Fonction qui permet d'ajouter les étudiants
-
+void ajouterEtudiantDansLaListe();
 //Foncfion qui permet de lister tous les etudiants du genre feminin
 void listerDesEtudiantsFeminin();
+//Fonction qui permet determiner la taille d'un fichier
+//void tailleDuFichier();
+long tailleDuFichier();
+//Fonction qui permet determiner la position du curseur dans un fichier
+void positionDuCurseur();
+//Fonction qui permet de lire mot par mot
+void lireMotParMot();
+//Fonction qui permet de lire caractere par caractere
+void lireCaractereParCaractere();
+//Foncfion qui permet de lister tous les etudiants inscrit dans une filiaire donnée
+void listerDesEtudiantsDansUnFiliaireDonne(string filiaire);
 
 
 #endif // FONCTIONS_H_INCLUDED

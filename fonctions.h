@@ -53,9 +53,20 @@ void get_nombresImpaires(int tab[], int N);
 int sommeDesElementPrecedent(int sommePrecedent[], int n);
 //Fonction qui determine la frequence de caractere
 int frequenceDeLettre(std::string chaine, char c);
-//fonctions qui determine la taille du fichier
-//ofstream::pos_type taille_fichier(const std::string &nom);
+//Fonction qui perme de determine l'occurrence d'une caratere
+float occurrenceCaractere(char caractere, std::string chaine);
+//Fonction qui permet de determiner la frequence d'une caractere
+float calculFreqceCaractere(char caract, std::string chaine);
+//Fonction de recherche  d'un caractere dans une chaine de caractere
+bool rechercheCaractere(char caract , std::string chaine);
 
+//Fonction qui permet de convertir un caractere minuscule en majuscule
+void convertChar(char& c);
+//Fonction qui permet de convertir un caractere en minuscule
+void convertCharMin(char& c);
+
+//Fonction qui permet de convertir une chaine de caractere
+void convert(std::string& s);
 //====================================Fichier==================================
 //Fonction qui permet de lire la liste des étudian
 void lireLaListeEtudiant();
@@ -66,40 +77,18 @@ void ajouterEtudiant(std::vector<etudiant> listeEtudiant  , int nbEtudiant);
 void ajouterEtudiantDansLaListe();
 //Foncfion qui permet de lister tous les etudiants du genre feminin
 void listerDesEtudiantsFeminin();
+//Fonction qui permet determiner la taille d'un fichier
+//void tailleDuFichier();
+long tailleDuFichier();
+//Fonction qui permet determiner la position du curseur dans un fichier
+void positionDuCurseur();
+//Fonction qui permet de lire mot par mot
+void lireMotParMot();
+//Fonction qui permet de lire caractere par caractere
+void lireCaractereParCaractere();
+//Foncfion qui permet de lister tous les etudiants inscrit dans une filiaire donnée
+void listerDesEtudiantsDansUneFiliaireDonne(std::string filiaire);
 
 
 #endif // FONCTIONS_H_INCLUDED
 
-
-        //=============================================================================================
-
-        // Definitions :
-        //      Type :
-        //          toption   = (GBIO, MIP, GIE, GIN)
-        //         tEtudiant = article:
-        //                          nom : chaine
-        //                          prenom : chaine
-        //                          sexe : (femme, homme)
-        //                          matricule : chiane
-        //                          dateDeNaissance : chaine
-        //                          lieuDeNaissance : chaine
-        //                          option          : toption
-        //      Vetudiant = vecteur[1-100] de tEtudiant
-        //
-        //      I-
-        //          1) ecrire une fonction qui lit un vecteur de n étudiants
-        //          2) ecrire une fonction qui ecrit un vecteur un n érudiants
-        //          3) ecrire une fonction qui delivre les nombres des filles dans un vecteur de n étudaiants
-        //          4) ecrire une fonction qui delivre les nombres des garçons et les nombres des filles.
-        //          5) ecrire une fonction qui delivre le nombres d'étudiant inscrit dans une discipline donnée.
-        //      II-
-        //          1) L'écriture des étudiants doit se faire dans un fichier appelé etudiant.txt
-        //          2) Enregistrer dans le fichier un étudiant s'appele Aziz faisant l'option MBIO et de sexe masculin
-        //          3) Apres avoir entrer au moins 5 étudiants dans le fichiers y compris Mr Aziz
-        //              a) lire le fichier ligne par ligine
-        //              b) lire le fichier mot par mot
-        //              c) lire le fichier caractere par caractere
-        //          4) lire le fichier entier
-        //          5) donner la taille du fichier
-        //          6) Mr Arcele étant perdu dans le fichier, permetez-lui de
-        //

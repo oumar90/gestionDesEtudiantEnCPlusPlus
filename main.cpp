@@ -4,6 +4,7 @@
 #include <sstream>
 #include <string>
 #include <cstring>
+#include <limits>  // pour utiliser numeric_limits<int>::max()
 #include "fonctions.h"
 
 using namespace std;
@@ -106,27 +107,49 @@ int main()
             break;
             }
             case 4: {
-                string chaine;
-                char c;
-                double compteur(0);
 
-                cout << "Veillez saisir une phrase anglaise"<< endl;
-                cout << "myconsole@phrase~$ ";
-                getline(cin, chaine);
+                string chainLecture("sans"), chaineAphabetique("sans");
 
-                cout << "Veillez entrer un caractere à determinée sa frequence "<<endl;
-                cout << "myconsole@char~$ ";
-                cin>>c;
+                int codeAscii(0);
 
-                compteur = frequenceDeLettre(chaine, c);
+                cout<<"Entrer une chaine de caracteres se terminant par un point."<<endl<<endl;
 
-                double f(0);
+                getline(cin, chainLecture, '.');
 
-                f = (compteur / chaine.length()) * 100;
+                for(int i = 0; i < chainLecture.size(); i++){
 
-                cout << chaine<<endl;
-                cout << f  << " % "<<endl;
-                cout << chaine.length() <<endl;
+                    codeAscii = (int)chainLecture[i];
+
+                    if(((codeAscii >= 65) && (codeAscii <= 90)) ||((codeAscii >= 97) && (codeAscii <= 122)))
+
+                        chaineAphabetique.push_back(chainLecture[i]);
+
+
+                }
+                string collectionDeChaineDeCaractere;
+
+                collectionDeChaineDeCaractere.push_back(chaineAphabetique[0]);
+
+                for(int i = 1; i < chaineAphabetique.size(); i++)
+
+                    if(!rechercheCaractere(chaineAphabetique[i], collectionDeChaineDeCaractere))
+
+                        collectionDeChaineDeCaractere.push_back(chaineAphabetique[i]);
+
+                for(int i = 0; i < collectionDeChaineDeCaractere.size(); i++ ){
+
+                    cout.setf(ios::dec, ios::basefield);
+
+                    cout.setf(ios::fixed, ios::floatfield);
+
+                    cout.precision(2);
+
+                    cout<<collectionDeChaineDeCaractere[i]<<": "<<calculFreqceCaractere(collectionDeChaineDeCaractere[i], chaineAphabetique)<<endl;
+
+                }
+
+
+
             break;
             }
 
@@ -139,24 +162,61 @@ int main()
                     cout <<"\n\tmyconsole@choix~$ ";
                     char chois;
                     cin>>chois;
+                    convertCharMin(chois);
                     switch(chois)
                     {
-                        case 'a':
-                            ajouterEtudiantDansLaListe();
-                        break;
-                        case 'b':
+                        case 'a':{
+                            string verfifier;
+                             ajouterEtudiantDansLaListe();
+                             cout << "\n\t Voulez-vous verifier l'enregistrement (Oui/Non) ? ";
+                             cin>> verfifier;
+                             if(verfifier == "Oui" || verfifier == "O" || verfifier == "o")
+                                lireLaListeEtudiant();
+
+                        break;}
+                        case 'b':{
                             lireLaListeEtudiant();
-                        break;
-                        case 'c':
+                        break;}
+                        case 'c':{
                              listerDesEtudiantsFeminin();
-                        break;
+                        break;}
+                        case 'd':lireMotParMot(); break;
+                        case 'e':lireCaractereParCaractere(); break;
+                        case 'f':{
+                            cout << "\t\tLISTES DES FILIAIRES"<<endl;
+                            cout << "\n\t\t1) GBIO"<<endl;
+                            cout << "\n\t\t2) MIP"<<endl;
+                            cout << "\n\t\t3) GIN"<<endl;
+                            cout << "\n\t\t4) GIE"<<endl;
+                            cout << "\n\tVeillez choisir une filiaire (1, 2, 3, 4, 5) : ";
+                            string filiaire;
+                            int filiaireE(0);
+                            cin>>filiaireE;
+                            switch(filiaireE)
+                            {
+                                case 1: {filiaire = "GBIO";listerDesEtudiantsDansUneFiliaireDonne(filiaire);break;}
+                                case 2: {filiaire = "MIP";listerDesEtudiantsDansUneFiliaireDonne(filiaire);break;}
+                                case 3: {filiaire = "GIN";listerDesEtudiantsDansUneFiliaireDonne(filiaire);break;}
+                                case 4: {filiaire = "GIE";listerDesEtudiantsDansUneFiliaireDonne(filiaire);break;}
+                            }
+
+
+
+                        break;}
+                        case 'g': positionDuCurseur(); break;
+                        case 'h':
+                        cout << "\n\tLe fichier etudiant.txt pèse est "<< tailleDuFichier() << " octets" <<endl;
+
+                          break;
                         default:
-                            cout << "Votre choix est invalide !!" << endl;
+                            cout << "Votre choix est invalide !!" << endl;break;
+
                     }
 
 
                 break;
             }
+
 
 
 

@@ -4,6 +4,7 @@
 #include <sstream>
 #include <string>
 #include <cstring>
+#include <limits>  // pour utiliser numeric_limits<int>::max()
 #include "fonctions.h"
 
 using namespace std;
@@ -11,162 +12,223 @@ using namespace std;
 int main()
 {
 
-string select("sel");
-do
-{
-
-    //MENU
-    menuPrincipale();
-
-    cout << "*****************************************************************************************"<<endl;
-    cout << "**                 VEILLEZ FAIRE VOTRE CHOIX [1-5]                                     **"<<endl;
-    cout << "*****************************************************************************************"<<endl;
-    cout <<"\n\tmyconsole@choix~$ ";
-
-
-    int choix(0);
-    cin>> choix;
-
-
-    switch(choix)
+    string select("sel");
+    do
     {
-        case 1 : {
 
-            int N(0), val(0), nombresDesOccurences(0),elts(0);
-            int tab[N];
+        //MENU
+        menuPrincipale();
 
-            cout << "************Veillez entrer la taille (N) du tableau ***************** "<<endl;
-            cout << "\n\tmyconsole@taille~$ ";
-            cin>> N;
-            //On remplie le tableau tab
-            cout << "\n************Veillez entrer les éléments de tableau*******************"<<endl;
-            for(int i=0; i<N; i++){
-                cout << "myconsole@elts~$ ";
-                cin>>elts;
-                tab[i]=elts;
+        cout << "*****************************************************************************************"<<endl;
+        cout << "**                 VEILLEZ FAIRE VOTRE CHOIX [1-5]                                     **"<<endl;
+        cout << "*****************************************************************************************"<<endl;
+        cout <<"\n\tmyconsole@choix~$ ";
+
+
+        int choix(0);
+        cin>> choix;
+
+
+        switch(choix)
+        {
+            case 1 : {
+
+                int N(0), val(0), nombresDesOccurences(0),elts(0);
+                int tab[N];
+
+                cout << "************Veillez entrer la taille (N) du tableau ***************** "<<endl;
+                cout << "\n\tmyconsole@taille~$ ";
+                cin>> N;
+                //On remplie le tableau tab
+                cout << "\n************Veillez entrer les éléments de tableau*******************"<<endl;
+                for(int i=0; i<N; i++){
+                    cout << "myconsole@elts~$ ";
+                    cin>>elts;
+                    tab[i]=elts;
+                }
+
+                //on entre la valeuer a compter son nombre des occurences
+                cout << "\n***************Veillez entrer la valeur de val******************* "<<endl;
+                cout << "myconsole@val~$ ";
+                cin>> val;
+
+
+                //On stocke le nombre d'occurences retourne par la focntion get_occurrences
+                nombresDesOccurences = get_occurence(tab, N, val);
+                cout << "\n\tLe nombre nombre des occurences de  " << val << " est : " << nombresDesOccurences<<endl;
+
+                break;
             }
+            case 2 : {
 
-            //on entre la valeuer a compter son nombre des occurences
-            cout << "\n***************Veillez entrer la valeur de val******************* "<<endl;
-            cout << "myconsole@val~$ ";
-            cin>> val;
+                int N(0),elts(0);
+                 int tab[N];
 
+                cout << "************Veillez entrer la taille (N) du tableau ***************** "<<endl;
+                cout << "myconsole@taille~$ ";
+                cin>> N;
+                //On remplie le tableau tab
+                cout << "\n************Veillez entrer les éléments de tableau*******************"<<endl;
+                for(int i=0; i<N; i++){
+                    cout << "myconsole@elts~$ ";
+                    cin>>elts;
+                    tab[i]=elts;
+                }
 
-            //On stocke le nombre d'occurences retourne par la focntion get_occurrences
-            nombresDesOccurences = get_occurence(*tab, N, val);
-            cout << "\n\tLe nombre nombre des occurences de  " << val << " est : " << nombresDesOccurences<<endl;
-
+                get_nombresImpaires(tab, N);
             break;
-        }
-        case 2 : {
-
-            int N(0),elts(0);
-             int tab[N];
-
-            cout << "************Veillez entrer la taille (N) du tableau ***************** "<<endl;
-            cout << "myconsole@taille~$ ";
-            cin>> N;
-            //On remplie le tableau tab
-            cout << "\n************Veillez entrer les éléments de tableau*******************"<<endl;
-            for(int i=0; i<N; i++){
-                cout << "myconsole@elts~$ ";
-                cin>>elts;
-                tab[i]=elts;
             }
+            case 3 : {
+                //Declarations et initialisations des variables
+                int elts(0), n(0);
+                int sommePrecedent[n];
 
-            get_nombresImpaires(tab, N);
-        break;
-        }
-        case 3 : {
-            //Declarations et initialisations des variables
-            int elts(0), n(0);
-            int *sommePrecedent[n];
+                cout << "************Veillez entrer la taille (N) du tableau ***************** "<<endl;
+                cout << "myconsole@taille~$ ";
+                cin>>n;
+                cout <<"\n";
+                cout << "\n************Veillez entrer les éléments du tableau ***************** "<<endl;
+                for(int i = 0; i < n ; i++){
+                    cout << "myconsole@elts~$ ";
+                    cin>> elts;
+                    sommePrecedent[i] = elts;
+                }
 
-            cout << "************Veillez entrer la taille (N) du tableau ***************** "<<endl;
-            cout << "myconsole@taille~$ ";
-            cin>>n;
-            cout <<"\n";
-            cout << "\n************Veillez entrer les éléments du tableau ***************** "<<endl;
-            for(int i = 0; i < n ; i++){
-                cout << "myconsole@elts~$ ";
-                cin>> elts;
-                sommePrecedent[i] = elts;
-            }
-
-            cout << "\n\tLes éléments de tableau origial: [";
-            for (int i = 0; i < n; ++i)
-            {
-                cout << " " << *sommePrecedent[i];
-            }
-            cout << " ]"<<endl;
-
-            cout << "\n\tLa somme des éléments précédents : [ ";
-            sommeDesElementPrecedent(sommePrecedent, n);
-            cout <<"]" <<endl;
-        break;
-        }
-        case 4: {
-            string chaine;
-            char c;
-            double compteur(0);
-
-            cout << "Veillez saisir une phrase anglaise"<< endl;
-            cout << "myconsole@phrase~$ ";
-            getline(cin, chaine);
-
-            cout << "Veillez entrer un caractere à determinée sa frequence "<<endl;
-            cout << "myconsole@char~$ ";
-            cin>>c;
-
-            compteur = frequenceDeLettre(chaine, c);
-
-            double f(0);
-
-            f = (compteur / chaine.length()) * 100;
-
-            cout << chaine<<endl;
-            cout << f  << " % "<<endl;
-            cout << chaine.length() <<endl;
-        break;
-        }
-
-        case 5 : {
-                //Sous menu
-                menuPrincipaleEtudiant();
-                cout << "*****************************************************************************************"<<endl;
-                cout << "**                 VEILLEZ FAIRE VOTRE CHOIX [a-c]                                     **"<<endl;
-                cout << "*****************************************************************************************"<<endl;
-                cout <<"\n\tmyconsole@choix~$ ";
-                char chois;
-                cin>>chois;
-                switch(chois)
+                cout << "\n\tLes éléments de tableau origial: [";
+                for (int i = 0; i < n; ++i)
                 {
-                    case 'a':
-                        ajouterEtudiantDansLaListe();
-                    break;
-                    case 'b':
-                        lireLaListeEtudiant();
-                    break;
-                    case 'c':
-                         listerDesEtudiantsFeminin();
-                    break;
-                    default:
-                        cout << "Votre choix est invalide !!" << endl;
+                    cout << " " << sommePrecedent[i];
+                }
+                cout << " ]"<<endl;
+
+                cout << "\n\tLa somme des éléments précédents : [ ";
+                sommeDesElementPrecedent(sommePrecedent, n);
+                cout <<"]" <<endl;
+            break;
+            }
+            case 4: {
+
+                string chaineLue, chaineAlphabetique;
+
+                int codeAscii;
+
+                cout<<"Entrer une chaine de caracteres se terminant par un point."<<endl<<endl;
+
+                cout<<"V"<<endl;
+
+                getline(cin, chaineLue, '.');
+
+                for(int i = 0; i < chaineLue.size(); i++){
+
+                    codeAscii = (int)chaineLue[i];
+
+                    if(((codeAscii >= 65) && (codeAscii <= 90)) ||((codeAscii >= 97) && (codeAscii <= 122)))
+
+                        chaineAlphabetique.push_back(chaineLue[i]);
+
+
+                }
+                string collectionCaractere;
+
+                collectionCaractere.push_back(chaineAlphabetique[0]);
+
+                for(int i = 1; i < chaineAlphabetique.size(); i++)
+
+                    if(!rechercheCaractere(chaineAlphabetique[i], collectionCaractere))
+
+                        collectionCaractere.push_back(chaineAlphabetique[i]);
+
+                for(int i = 0; i < collectionCaractere.size(); i++ ){
+
+                    cout.setf(ios::dec, ios::basefield);
+
+                    cout.setf(ios::fixed, ios::floatfield);
+
+                    cout.precision(2);
+
+                    cout<<collectionCaractere[i]<<": "<<calculFreqceCaractere(collectionCaractere[i], chaineAlphabetique)<<endl;
+
                 }
 
 
+
             break;
-        }
+            }
+
+            case 5 : {
+                    //Sous menu
+                    menuPrincipaleEtudiant();
+                    cout << "*****************************************************************************************"<<endl;
+                    cout << "**                 VEILLEZ FAIRE VOTRE CHOIX [a-c]                                     **"<<endl;
+                    cout << "*****************************************************************************************"<<endl;
+                    cout <<"\n\tmyconsole@choix~$ ";
+                    char chois;
+                    cin>>chois;
+                    convertCharMin(chois);
+                    switch(chois)
+                    {
+                        case 'a':{
+                            string verfifier;
+                             ajouterEtudiantDansLaListe();
+                             cout << "\n\t Voulez-vous verifier l'enregistrement (Oui/Non) ? ";
+                             cin>> verfifier;
+                             if(verfifier == "Oui" || verfifier == "O" || verfifier == "o")
+                                lireLaListeEtudiant();
+
+                        break;}
+                        case 'b':{
+                            lireLaListeEtudiant();
+                        break;}
+                        case 'c':{
+                             listerDesEtudiantsFeminin();
+                        break;}
+                        case 'd':lireMotParMot(); break;
+                        case 'e':lireCaractereParCaractere(); break;
+                        case 'f':{
+                            cout << "\t\tLISTES DES FILIAIRES"<<endl;
+                            cout << "\n\t\t1) GBIO"<<endl;
+                            cout << "\n\t\t2) MIP"<<endl;
+                            cout << "\n\t\t3) GIN"<<endl;
+                            cout << "\n\t\t4) GIE"<<endl;
+                            cout << "\n\tVeillez choisir une filiaire (1, 2, 3, 4, 5) : ";
+                            string filiaire;
+                            int filiaireE(0);
+                            cin>>filiaireE;
+                            switch(filiaireE)
+                            {
+                                case 1: {filiaire = "GBIO";listerDesEtudiantsDansUneFiliaireDonne(filiaire);break;}
+                                case 2: {filiaire = "MIP";listerDesEtudiantsDansUneFiliaireDonne(filiaire);break;}
+                                case 3: {filiaire = "GIN";listerDesEtudiantsDansUneFiliaireDonne(filiaire);break;}
+                                case 4: {filiaire = "GIE";listerDesEtudiantsDansUneFiliaireDonne(filiaire);break;}
+                            }
 
 
 
-}
+                        break;}
+                        case 'g': positionDuCurseur(); break;
+                        case 'h':
+                        cout << "\n\tLe fichier etudiant.txt pèse est "<< tailleDuFichier() << " octets" <<endl;
+
+                          break;
+                        default:
+                            cout << "Votre choix est invalide !!" << endl;break;
+
+                    }
+
+
+                break;
+            }
 
 
 
-    cout << "\n\t Voulez-vous continuez (Oui/Non) ? ";
-    cin>> select;
-}while( select == "Oui" || select == "O" || select== "o");4
 
-    return 0;
+    }
+
+
+
+        cout << "\n\t Voulez-vous continuez (Oui/Non) ? ";
+        cin>> select;
+    }while( select == "Oui" || select == "O" || select== "o");
+
+return 0;
 }

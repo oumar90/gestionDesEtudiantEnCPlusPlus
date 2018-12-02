@@ -1,9 +1,7 @@
-===============================LISTE DES ETUDIANTS===============================
-Noms - Prénoms - Sexes - Ages - Matricule - Date de Naissance - Lieu de Naissance
-sfdfsdfdsf sqfsfsdfsdf feminin 25 dfsfhjdsfhhhkjf sfhsqfqsfhsdj skqbfjdfkfjd GIN
-zzzz zzssss7 masculin 54 ssskss s65s65ss 65s5s5 GIN
-pozopezp sdksdkskd masculin 56 sdsjdsjdkcs slkdksjmsl qdslmqdjsdq MIP
-lsdfd7 sflmsfskld feminin 65 14556sdsd qddsqsdsd qdqdqsd MIP
-lkdsfjsd sdfnsdfoisid feminin 78 ksqjlsfkld dkjfksdfjd jsqfsdjfkjjsf MIP
-sjdfsdlf kjdlqhqdf feminin 78 lkdfjqsmfjds lslfsldflsdf kjshfksdfjdsf GBIO
-oumar djimé masculin 25 14402F 18/20/1998 Ndjamena GBIO
+======================================LISTES DES ETUDIANTS========================================
+NOMS   ET   PRÉNOMS   -   SEXES    -    AGES    -    MATRICULES     -     DATE DE NAISSANCE   -    LIEU DE NAISSANCE   -   OPTIONS
+
+oumar       djimé       masculin       5       12VGF3       11/11/119       kaola       GIN
+
+kmkmkmk       dfgfdgf       feminin       564       15ddfdf6       12/12/209       kakdakdk       GIE
+
