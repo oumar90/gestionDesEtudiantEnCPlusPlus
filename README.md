@@ -1,4 +1,14 @@
 # Gestions des étudiants en C++
+
+# Pou utiliser ce programme c'est teès simple:
+il suffit de faire
+          git clone https://github.com/oumar90/gestionDesEtudiantEnCPlusPlus.git
+
+et l'ouvrir avec votre IDE préféré comme Code Block etc..
+ou compiler en ligne de commande:
+        g++ main - o programme
+        ./programme
+
 # Le programme permet de resoudre les problèmes suivantes :
 
 #  Definitions :
@@ -32,11 +42,3 @@
                  6) Mr Arcele étant perdu dans le fichier, permetez-lui de
         
 
-# Pou utiliser ce programme c'est teès simple:
-il suffit de faire
-          git clone https://github.com/oumar90/gestionDesEtudiantEnCPlusPlus.git
-
-et l'ouvrir avec votre IDE préféré comme Code Block etc..
-ou compiler en ligne de commande:
-        g++ main - o programme
-        ./programme
