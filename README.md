@@ -33,3 +33,10 @@
         
 
 # Pou utiliser ce programme c'est teès simple
+il suffit de faire
+git clone https://github.com/oumar90/gestionDesEtudiantEnCPlusPlus.git
+
+et l'ouvrir avec votre IDE préféré comme Code Block etc..
+ou compiler en ligne de commande:
+g++ main - o programme
+./programme
